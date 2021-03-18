@@ -44,10 +44,11 @@ This code example requires the XENSIV™ BGT60TR13C Radar Wing Board as part of 
 
 - [Connected Sensor Kit](https://www.infineon.com/connectedsensorkit)
 - [CYSBSYSKIT-DEV-01](https://github.com/cypresssemiconductorco/TARGET_CYSBSYSKIT-DEV-01)
-- [Infineon Radar Sensors](https://www.infineon.com/cms/de/product/sensor/radar-sensors/#)
+- [API Reference Guide](https://cypresssemiconductorco.github.io/xensiv-radar-sensing/radarsensing_api_reference_manual/html/index.html)
+- [Infineon Radar Sensors](https://www.infineon.com/cms/en/product/sensor/radar-sensors)
 - [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
 - [PSoC 6 Code Examples using ModusToolbox IDE](https://github.com/cypresssemiconductorco/Code-Examples-for-ModusToolbox-Software)
-- [PSoC 6 Resources -](https://community.cypress.com/)
+- [PSoC 6 Resources](https://community.cypress.com/)
 
 ---
 © Infineon Semiconductors, 2019-2021.
