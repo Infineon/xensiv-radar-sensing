@@ -31,11 +31,9 @@ Minimum required ModusToolbox Software Environment: v2.2
 
 * [Connected Sensor Kit](https://www.infineon.com/connectedsensorkit)
 * [CYSBSYSKIT-DEV-01](https://github.com/infineon/TARGET_CYSBSYSKIT-DEV-01)
-* [Cypress Semiconductor, an Infineon Technologies Company](http://www.cypress.com)
-* [Cypress Semiconductor GitHub](https://github.com/infineon)
+* [Infineon Technologies](https://www.infineon.com)
+* [Infineon GitHub](https://github.com/infineon)
 * [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
-* [PSoC 6 Code Examples using ModusToolbox IDE](https://github.com/infineon/Code-Examples-for-ModusToolbox-Software)
-* [PSoC 6 Middleware](https://github.com/infineon/psoc6-middleware)
 
 ---
 © Infineon Technologies Corporation, 2019-2021.
