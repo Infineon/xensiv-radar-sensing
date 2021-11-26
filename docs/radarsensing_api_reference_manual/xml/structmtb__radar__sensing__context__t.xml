@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="structmtb__radar__sensing__context__t" kind="struct" language="C++" prot="public">
+    <compoundname>mtb_radar_sensing_context_t</compoundname>
+    <includes local="no">mtb_radar_sensing.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtb__radar__sensing__context__t_1aae7eabca7f8295a71309e5cac052318e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mtb_radar_sensing_context_t::internal</definition>
+        <argsstring></argsstring>
+        <name>internal</name>
+        <briefdescription>
+<para>Internal variable initialized by <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref>, do not touch or modify. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="630" column="10" bodyfile="mtb_radar_sensing.h" bodystart="630" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Context object of the radar. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The structure must be initialized using <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref>. It is passed to all other functions in this library. Don&apos;t modify the context from application code. </para>
+    </detaileddescription>
+    <location file="mtb_radar_sensing.h" line="628" column="1" bodyfile="mtb_radar_sensing.h" bodystart="629" bodyend="631"/>
+    <listofallmembers>
+      <member refid="structmtb__radar__sensing__context__t_1aae7eabca7f8295a71309e5cac052318e" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_context_t</scope><name>internal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

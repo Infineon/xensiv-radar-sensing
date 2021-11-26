@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="group__group__mtb__radar__sensing__structures" kind="group">
+    <compoundname>group_mtb_radar_sensing_structures</compoundname>
+    <title>Structures</title>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" prot="public" static="no" strong="no">
+        <type></type>
+        <name>mtb_radar_sensing_event_t</name>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a478914ef0b0e7e42c114198537344237" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_PRESENCE_IN</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+<para>Presence event: one or more people were detected in radar field of view within maximum range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793affa8349aa5c38952e9a7a24888c0144d" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_PRESENCE_OUT</name>
+          <initializer>= 301</initializer>
+          <briefdescription>
+<para>Absence event: no human presence was detected in radar field of view within maximum range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a6ee25c109aa9db26e77fb771f470044f" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_IN</name>
+          <initializer>= 310</initializer>
+          <briefdescription>
+<para>Counter in event: a person has entered through the counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ac267bfa78203ba1e9a3f1bf847a0588f" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_OUT</name>
+          <initializer>= 311</initializer>
+          <briefdescription>
+<para>Counter out event: a person has exited through the counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae1b2f192f0c68e8e7d8e2a5ce7bb4ba7" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED</name>
+          <initializer>= 312</initializer>
+          <briefdescription>
+<para>Counter occupied: a person is still present in the traffic light zone. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae53d7986140f07944c986b62bd90c111" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_FREE</name>
+          <initializer>= 313</initializer>
+          <briefdescription>
+<para>Counter free: no human presence in the traffic light zone <linebreak/>
+ </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Type of events that are detected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="553" column="1" bodyfile="mtb_radar_sensing.h" bodystart="554" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>mtb_radar_sensing_mask_t</name>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa0f3b68c38b6dcf3197492f876b8994e6" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No events. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7facdeca8a2712f56b56673d294c809e0a1" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_PRESENCE_EVENTS</name>
+          <initializer>= (1 &lt;&lt; 8)</initializer>
+          <briefdescription>
+<para>Events for presence detection. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa479f9b8eb4e8fcc1447ede4f4813c859" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_COUNTER_EVENTS</name>
+          <initializer>= (2 &lt;&lt; 8)</initializer>
+          <briefdescription>
+<para>Events for entrance counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Type of application events that needs to be configured with <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="567" column="1" bodyfile="mtb_radar_sensing.h" bodystart="568" bodyend="572"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" prot="public" static="no">
+        <type>uint64_t</type>
+        <definition>typedef uint64_t mtb_radar_sensing_timestamp_t</definition>
+        <argsstring></argsstring>
+        <name>mtb_radar_sensing_timestamp_t</name>
+        <briefdescription>
+<para>timestamp in milliseconds </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="543" column="18" bodyfile="mtb_radar_sensing.h" bodystart="543" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__structures_1ga3c630c4379dae615b885a4ff82813010" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t mtb_radar_sensing_timeinterval_t</definition>
+        <argsstring></argsstring>
+        <name>mtb_radar_sensing_timeinterval_t</name>
+        <briefdescription>
+<para>time interval in milliseconds </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="548" column="18" bodyfile="mtb_radar_sensing.h" bodystart="548" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Typedefs and structures used in the library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

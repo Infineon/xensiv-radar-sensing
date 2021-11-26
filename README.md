@@ -16,7 +16,7 @@ This library provides APIs to interface with the RadarSensing library that allow
     **Note:** This code example version requires ModusToolbox software version 2.2 or later and is not backward compatible with v2.1 or older versions.
 - Board Support Package (BSP) minimum required version: 2.0.0
 - Programming Language: C
-- Associated Parts: All [PSoC® 6 MCU](http://www.cypress.com/PSoC6) parts
+- Associated Parts: All [PSoC™ 6 MCU](http://www.cypress.com/PSoC6) parts
 
 ## Supported Toolchains (make variable 'TOOLCHAIN')
 
@@ -43,12 +43,12 @@ This code example requires the XENSIV™ BGT60TR13C Radar Wing Board as part of 
 ### More information
 
 - [Connected Sensor Kit](https://www.infineon.com/connectedsensorkit)
-- [CYSBSYSKIT-DEV-01](https://github.com/cypresssemiconductorco/TARGET_CYSBSYSKIT-DEV-01)
-- [API Reference Guide](https://cypresssemiconductorco.github.io/xensiv-radar-sensing/radarsensing_api_reference_manual/html/index.html)
+- [CYSBSYSKIT-DEV-01](https://github.com/infineon/TARGET_CYSBSYSKIT-DEV-01)
+- [API Reference Guide](https://infineon.github.io/xensiv-radar-sensing/radarsensing_api_reference_manual/html/index.html)
 - [Infineon Radar Sensors](https://www.infineon.com/cms/en/product/sensor/radar-sensors)
 - [ModusToolbox](https://www.cypress.com/products/modustoolbox-software-environment)
-- [PSoC 6 Code Examples using ModusToolbox IDE](https://github.com/cypresssemiconductorco/Code-Examples-for-ModusToolbox-Software)
-- [PSoC 6 Resources](https://community.cypress.com/)
+- [PSoC™ 6 Code Examples using ModusToolbox IDE](https://github.com/infineon/Code-Examples-for-ModusToolbox-Software)
+- [PSoC™ 6 Resources](https://community.cypress.com/)
 
 ---
 © Infineon Semiconductors, 2019-2021.

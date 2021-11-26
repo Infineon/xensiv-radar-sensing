@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="section_radar_sensing_configuration" kind="page">
+    <compoundname>section_radar_sensing_configuration</compoundname>
+    <title>RadarSensing library API usage</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="par"><title></title><para>Following code snippet shows example usage of RadarSensing library APIs for presence detection application.</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal">#include<sp/>&quot;mtb_radar_sensing.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Declare<sp/>a<sp/>context<sp/>of<sp/>radar.</highlight></codeline>
+<codeline><highlight class="normal">mtb_radar_sensing_context_t<sp/>sensing_context;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Declare<sp/>SPI<sp/>object</highlight></codeline>
+<codeline><highlight class="normal">cyhal_spi_t<sp/>mSPI;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Initialize<sp/>HW<sp/>configurations<sp/>for<sp/>radar</highlight></codeline>
+<codeline><highlight class="normal">mtb_radar_sensing_hw_cfg_t<sp/>hw_cfg<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.spi_cs<sp/>=<sp/>CYBSP_SPI_CS,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.reset<sp/>=<sp/>CYBSP_GPIO11,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.ldo_en<sp/>=<sp/>CYBSP_GPIO5,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.irq<sp/>=<sp/>CYBSP_GPIO10,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.spi<sp/>=<sp/>&amp;mSPI</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Activate<sp/>radar<sp/>reset<sp/>pin</highlight></codeline>
+<codeline><highlight class="normal">cyhal_gpio_init(hw_cfg.reset,<sp/>CYHAL_GPIO_DIR_OUTPUT,<sp/>CYHAL_GPIO_DRIVE_STRONG,<sp/>true);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Enable<sp/>LDO</highlight></codeline>
+<codeline><highlight class="normal">cyhal_gpio_init(hw_cfg.ldo_en,<sp/>CYHAL_GPIO_DIR_OUTPUT,<sp/>CYHAL_GPIO_DRIVE_STRONG,<sp/>true);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Enable<sp/>IRQ<sp/>pin</highlight></codeline>
+<codeline><highlight class="normal">cyhal_gpio_init(hw_cfg.irq,<sp/>CYHAL_GPIO_DIR_INPUT,<sp/>CYHAL_GPIO_DRIVE_PULLDOWN,<sp/>false);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//CS<sp/>handled<sp/>manually</highlight></codeline>
+<codeline><highlight class="normal">cyhal_gpio_init(hw_cfg.spi_cs,<sp/>CYHAL_GPIO_DIR_OUTPUT,<sp/>CYHAL_GPIO_DRIVE_STRONG,<sp/>true);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Configure<sp/>SPI<sp/>interface</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(cyhal_spi_init(hw_cfg.spi,<sp/>CYBSP_SPI_MOSI,<sp/>CYBSP_SPI_MISO,<sp/>CYBSP_SPI_CLK,<sp/>NC,<sp/>NULL,<sp/>8,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CYHAL_SPI_MODE_00_MSB,<sp/>false)<sp/>!=<sp/>CY_RSLT_SUCCESS<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Set<sp/>the<sp/>data<sp/>rate<sp/>to<sp/>25<sp/>Mbps</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(cyhal_spi_set_frequency(hw_cfg.spi,<sp/>SPI_FREQUENCY)<sp/>!=<sp/>CY_RSLT_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Initialize<sp/>the<sp/>context<sp/>of<sp/>radar<sp/>and<sp/>configure<sp/>events<sp/>for<sp/>presence<sp/>detection<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mtb_radar_sensing_init(&amp;sensing_context,<sp/>&amp;hw_cfg,<sp/>MTB_RADAR_SENSING_MASK_PRESENCE_EVENTS)<sp/>!=<sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;mtb_radar_sensing_init<sp/>error<sp/>-<sp/>Radar<sp/>Wingboard<sp/>not<sp/>connected?\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Configure<sp/>parameters<sp/>for<sp/>presence<sp/>detection.</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mtb_radar_sensing_set_parameter(sensing_context,<sp/>&quot;radar_presence_range_max&quot;,<sp/>&quot;1.0&quot;)<sp/>!=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mtb_radar_sensing_set_parameter(sensing_context,<sp/>&quot;radar_presence_sensitivity&quot;,<sp/>&quot;medium&quot;)<sp/>!=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Declare<sp/>the<sp/>following<sp/>function<sp/>to<sp/>prepare<sp/>a<sp/>callback<sp/>that<sp/>handles<sp/>presence<sp/>detection<sp/>events.</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>radar_sensing_callback(mtb_radar_sensing_context_t<sp/>sensing_context,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtb_radar_sensing_event_t<sp/>event,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtb_radar_sensing_event_info_t*<sp/>event_info,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void*<sp/>data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>switch<sp/>(event)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_PRESENCE_IN:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.3f:<sp/>Presence<sp/>IN<sp/>%.2f-%.2f\r\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(float)<sp/>event_info-&gt;timestamp<sp/>/<sp/>1000,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_presence_event_info_t*)event_info)-&gt;distance);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_PRESENCE_OUT:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.3f:<sp/>Presence<sp/>OUT\r\n&quot;,<sp/>(float)<sp/>event_info-&gt;timestamp<sp/>/<sp/>1000);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Register<sp/>callback.</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mtb_radar_sensing_register_callback(sensing_context,<sp/>radar_sensing_callback,<sp/>NULL)<sp/>!=</highlight></codeline>
+<codeline><highlight class="normal">MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//Enable<sp/>radar<sp/>sensing<sp/>and<sp/>periodically<sp/>call<sp/>mtb_radar_sensing_process<sp/>to<sp/>process<sp/>time<sp/>domain</highlight></codeline>
+<codeline><highlight class="normal">//data<sp/>acquired<sp/>from<sp/>radar.</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mtb_radar_sensing_enable(sensing_context)<sp/>!=<sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(;;)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//Process<sp/>data<sp/>acquired<sp/>from<sp/>radar<sp/>every<sp/>2ms</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>currenttime<sp/>=<sp/>(uint64_t)xTaskGetTickCount()<sp/>*<sp/>1000LL<sp/>/<sp/>configTICK_RATE_HZ;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mtb_radar_sensing_process(sensing_context,<sp/>currenttime)<sp/>!=<sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;mtb_radar_sensing_process<sp/>error\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vTaskDelay(MTB_RADAR_SENSING_PROCESS_DELAY);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para><itemizedlist>
+<listitem><para>mtb_radar_sensing_process should be called every ~2ms (use <ref refid="group__group__mtb__radar__sensing__macros_1ga1a00afd852547d57f23c2b3a66ccdd39" kindref="member">MTB_RADAR_SENSING_PROCESS_DELAY</ref> constant). <linebreak/>
+</para>
+</listitem><listitem><para>Users should replace currenttime initialization with their own APIs that provide system time in ms. <linebreak/>
+</para>
+</listitem><listitem><para>For a complete demonstration of the above code snippet using FreeRTOS, please refer to the Modus Toolbox Code Example on presence detection and entrance counter.</para>
+</listitem><listitem><para>For a MCU other than PSoC, users will have to configure SPI, HW accordingly. <linebreak/>
+ </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="par"><title></title><para>A similar approach can be taken to demonstrate the use of RadarSensing library APIs for entrance counter. However, there are a few changes that need to be made to the above code snippet:</para>
+</simplesect>
+<programlisting><codeline><highlight class="normal"><sp/>//Replace<sp/>initialization<sp/>such<sp/>that<sp/>events<sp/>for<sp/>entrance<sp/>counter<sp/>application<sp/>is<sp/>configured.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>(mtb_radar_sensing_init(&amp;sensing_context,<sp/>&amp;hw_cfg,<sp/>MTB_RADAR_SENSING_MASK_COUNTER_EVENTS)<sp/>!=<sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;mtb_radar_sensing_init<sp/>error<sp/>-<sp/>Radar<sp/>Wingboard<sp/>not<sp/>connected?\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>//Configure<sp/>parameters<sp/>used<sp/>for<sp/>entrance<sp/>counter,<sp/>e.g.<sp/>installation<sp/>as<sp/>side,<sp/>orientation<sp/>as<sp/>landscape.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>(mtb_radar_sensing_set_parameter(sensing_context,<sp/>&quot;radar_counter_installation&quot;,<sp/>&quot;side&quot;)<sp/>!=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/>if<sp/>(mtb_radar_sensing_set_parameter(sensing_context,<sp/>&quot;radar_counter_orientation&quot;,<sp/>&quot;landscape&quot;)<sp/>!=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MTB_RADAR_SENSING_SUCCESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>CY_ASSERT(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>//Update<sp/>the<sp/>callback<sp/>to<sp/>handle<sp/>entrance<sp/>counter<sp/>events.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>void<sp/>radar_sensing_callback(mtb_radar_sensing_context_t<sp/>sensing_context,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtb_radar_sensing_event_t<sp/>event,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtb_radar_sensing_event_info_t*<sp/>event_info,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void*<sp/>data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>switch<sp/>(event)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>people<sp/>walking<sp/>in<sp/>detected</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_COUNTER_IN:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.2f:<sp/>Counter<sp/>IN<sp/>detected,<sp/>IN:<sp/>%d,<sp/>OUT:<sp/>%d\r\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(float)event_info-&gt;timestamp<sp/>/<sp/>1000,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;in_count,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;out_count);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>people<sp/>walking<sp/>out<sp/>detected</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_COUNTER_OUT:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.2f:<sp/>Counter<sp/>OUT<sp/>detected,<sp/>IN:<sp/>%d,<sp/>OUT:<sp/>%d\r\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(float)event_info-&gt;timestamp<sp/>/<sp/>1000,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;in_count,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;out_count);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>object<sp/>detected<sp/>in<sp/>traffic<sp/>zone,<sp/>reminder<sp/>for<sp/>social<sp/>distancing</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.2f:<sp/>Counter<sp/>occupied<sp/>detected,<sp/>IN:<sp/>%d,<sp/>OUT:<sp/>%d\r\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(float)event_info-&gt;timestamp<sp/>/<sp/>1000,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;in_count,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;out_count);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>no<sp/>more<sp/>object<sp/>detected<sp/>in<sp/>traffic<sp/>zone</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>MTB_RADAR_SENSING_EVENT_COUNTER_FREE:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(&quot;%.2f:<sp/>Counter<sp/>free<sp/>detected,<sp/>IN:<sp/>%d,<sp/>OUT:<sp/>%d\r\n&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(float)event_info-&gt;timestamp<sp/>/<sp/>1000,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;in_count,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((mtb_radar_sensing_counter_event_info_t<sp/>*)event_info)-&gt;out_count);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>For details on high-level function, used data structures and callback definition, please refer to:<itemizedlist>
+<listitem><para><ref refid="group__group__mtb__radar__sensing__high__level" kindref="compound">High Level</ref></para>
+</listitem><listitem><para><ref refid="group__group__mtb__radar__sensing__macros" kindref="compound">Macros</ref></para>
+</listitem><listitem><para><ref refid="group__group__mtb__radar__sensing__structures" kindref="compound">Structures</ref></para>
+</listitem><listitem><para><ref refid="group__group__mtb__radar__sensing__callbacks" kindref="compound">Callbacks</ref> </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

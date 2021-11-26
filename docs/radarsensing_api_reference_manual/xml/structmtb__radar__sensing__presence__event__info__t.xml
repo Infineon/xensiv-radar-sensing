@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="structmtb__radar__sensing__presence__event__info__t" kind="struct" language="C++" prot="public">
+    <compoundname>mtb_radar_sensing_presence_event_info_t</compoundname>
+    <includes local="no">mtb_radar_sensing.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtb__radar__sensing__presence__event__info__t_1a2d149a77391ed5673aec09f06c305e5b" prot="public" static="no" mutable="no">
+        <type><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref></type>
+        <definition>mtb_radar_sensing_timestamp_t mtb_radar_sensing_presence_event_info_t::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+<para>Timestamp of event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="592" column="35" bodyfile="mtb_radar_sensing.h" bodystart="592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__presence__event__info__t_1a5d0eda69bfaee239bb336b1416a9d1c6" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* mtb_radar_sensing_presence_event_info_t::description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+<para>Description about the event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="593" column="16" bodyfile="mtb_radar_sensing.h" bodystart="593" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__presence__event__info__t_1a3489702946570ef865a3d1802e20bfce" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float mtb_radar_sensing_presence_event_info_t::distance</definition>
+        <argsstring></argsstring>
+        <name>distance</name>
+        <briefdescription>
+<para>Distance of object in meters, -1.0f if not applicable (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>. for OUT event) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="594" column="11" bodyfile="mtb_radar_sensing.h" bodystart="594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__presence__event__info__t_1acbdd05fa32c5ec6eef53be2756c93521" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float mtb_radar_sensing_presence_event_info_t::accuracy</definition>
+        <argsstring></argsstring>
+        <name>accuracy</name>
+        <briefdescription>
+<para>Accuracy of distance of object +- meters, -1.0f if not applicable (i.e. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>for OUT event) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="595" column="11" bodyfile="mtb_radar_sensing.h" bodystart="595" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to hold information of presence detection events. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mtb_radar_sensing.h" line="590" column="1" bodyfile="mtb_radar_sensing.h" bodystart="591" bodyend="596"/>
+    <listofallmembers>
+      <member refid="structmtb__radar__sensing__presence__event__info__t_1acbdd05fa32c5ec6eef53be2756c93521" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_presence_event_info_t</scope><name>accuracy</name></member>
+      <member refid="structmtb__radar__sensing__presence__event__info__t_1a5d0eda69bfaee239bb336b1416a9d1c6" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_presence_event_info_t</scope><name>description</name></member>
+      <member refid="structmtb__radar__sensing__presence__event__info__t_1a3489702946570ef865a3d1802e20bfce" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_presence_event_info_t</scope><name>distance</name></member>
+      <member refid="structmtb__radar__sensing__presence__event__info__t_1a2d149a77391ed5673aec09f06c305e5b" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_presence_event_info_t</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

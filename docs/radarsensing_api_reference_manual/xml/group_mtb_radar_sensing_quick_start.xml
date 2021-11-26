@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="group_mtb_radar_sensing_quick_start" kind="page">
+    <compoundname>group_mtb_radar_sensing_quick_start</compoundname>
+    <title>Quick Start Guide</title>
+    <briefdescription>
+<para>RadarSensing library is used in ModusToolbox, Refer to the <ref refid="group_mtb_radar_sensing_quick_start_1section_radar_sensing_toolchain" kindref="member">Supported Software and Tools</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>RadarSensing library is used in ModusToolbox, Refer to the <ref refid="group_mtb_radar_sensing_quick_start_1section_radar_sensing_toolchain" kindref="member">Supported Software and Tools</ref>.</para>
+<para>The quickest way to get started is using the Code Examples. Infineon Semiconductor continuously extends its portfolio of the code examples at the <ulink url="http://www.cypress.com"><bold>Cypress Semiconductor website</bold></ulink> and at the <ulink url="https://github.com/cypresssemiconductorco"><bold>Cypress Semiconductor GitHub</bold></ulink>.</para>
+<sect1 id="group_mtb_radar_sensing_quick_start_1group_mtb_radar_sensing_quick_start_modus">
+<title>RadarSensing Quick Start Guide</title>
+<para>This quick start guide assumes that the environment is configured to use PSoC 6 Peripheral Driver Library(psoc6pdl) for development and the library is included in the project. It also assumes the <ulink url="https://www.cypress.com/ModusToolboxDeviceConfig"><bold>ModusToolbox Device Configurator Tool</bold></ulink></para>
+<para><itemizedlist>
+<listitem><para>Click on New Application option in Modus Toolbox to open Project Creator and select CYBSYSKIT-DEV-01. <image type="html" name="project_creator.png" width="800px">Project Creator</image>
+ <image type="latex" name="project_creator.png"></image>
+</para>
+</listitem><listitem><para>Click on the application to be created: Radar Presence / Entrance Counter Application on FreeRTOS and click on Create. Once done, the example project is visible on Project Explorer tab. Build and run. <image type="html" name="application_selection.png" width="800px">Application selection</image>
+ <image type="latex" name="application_selection.png"></image>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>Please make sure that the radar wingboard is connected to the FeatherKit.</para>
+</simplesect>
+</para>
+</sect1>
+<sect1 id="group_mtb_radar_sensing_quick_start_1section_radar_sensing_toolchain">
+<title>Supported Software and Tools</title>
+<para>This version of library is compatible with the following Softwares and Tools: <table rows="6" cols="2"><row>
+<entry thead="yes"><para>Software and Tools </para>
+</entry><entry thead="yes"><para>Version  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ModusToolbox Software Environment </para>
+</entry><entry thead="no"><para>2.2  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>ModusToolbox Project Creator </para>
+</entry><entry thead="no"><para>1.20  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Peripheral Driver Library (PDL) </para>
+</entry><entry thead="no"><para>1.5.0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>GCC Compiler </para>
+</entry><entry thead="no"><para>9.3.1  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>FreeRTOS </para>
+</entry><entry thead="no"><para>10.3.1  </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="group_mtb_radar_sensing_quick_start_1section_radar_sensing_memory_usage">
+<title>Memory Usage</title>
+<para>Flash size - 49228 bytes Data size - 568 bytes</para>
+<para>The RadarSensing library runtime required stack and heap memory consumption varies for different applications.</para>
+<para>Entrance counter:</para>
+<para><itemizedlist>
+<listitem><para>Stack Size - 1792 bytes</para>
+</listitem><listitem><para>Heap Size - 25026 bytes</para>
+</listitem></itemizedlist>
+</para>
+<para>Presence detection:</para>
+<para><itemizedlist>
+<listitem><para>Stack Size - 1792 bytes</para>
+</listitem><listitem><para>Heap Size - 137837 bytes</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="group_mtb_radar_sensing_quick_start_1section_radar_sensing_more_information">
+<title>More Information</title>
+<para>Cypress highly recommends starting with these documents. They can be found on the Cypress web site at www.cypress.com.</para>
+<para>For more information, refer to the following documents:</para>
+<para><itemizedlist>
+<listitem><para><ulink url="https://www.cypress.com/products/modustoolbox-software-environment"><bold>ModusToolbox Software Environment, Quick Start Guide, Documentation, and Videos</bold></ulink></para>
+</listitem><listitem><para><ulink url="https://github.com/cypresssemiconductorco"><bold> Cypress Semiconductor GitHub</bold></ulink></para>
+</listitem><listitem><para><ulink url="https://www.cypress.com/ModusToolboxDeviceConfig"><bold>ModusToolbox Device Configurator Tool Guide</bold></ulink></para>
+</listitem><listitem><para><ulink url="https://cypresssemiconductorco.github.io/psoc6pdl/pdl_api_reference_manual/html/index.html"><bold>PDL API Reference</bold></ulink></para>
+</listitem><listitem><para><ulink url="http://www.cypress.com"><bold>Cypress Semiconductor</bold></ulink></para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>The links to another software component&apos;s documentation (middleware and PDL) point to GitHub to the latest available version of the software. To get documentation of the specified version, download from GitHub and unzip the component archive. The documentation is available in the <emphasis>docs</emphasis> folder. </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

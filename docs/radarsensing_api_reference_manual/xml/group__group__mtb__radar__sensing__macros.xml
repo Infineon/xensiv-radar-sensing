@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="group__group__mtb__radar__sensing__macros" kind="group">
+    <compoundname>group_mtb_radar_sensing_macros</compoundname>
+    <title>Macros</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga1a00afd852547d57f23c2b3a66ccdd39" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_PROCESS_DELAY</name>
+        <initializer>(2)</initializer>
+        <briefdescription>
+<para>Recommended delay time (ms) after each call to mtb_radar_sensing_process. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="501" column="9" bodyfile="mtb_radar_sensing.h" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga253b91f78f8359daba083bec491afd12" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_SUCCESS</name>
+        <initializer>CY_RSLT_SUCCESS</initializer>
+        <briefdescription>
+<para>Result success <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="503" column="9" bodyfile="mtb_radar_sensing.h" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga6d3d44aebf0a334159ae7f6d0356c68e" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_INIT_ERROR</name>
+        <initializer>(1)</initializer>
+        <briefdescription>
+<para>Initialization error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="504" column="9" bodyfile="mtb_radar_sensing.h" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga60464d3b1744789fcef956d7debaa7b1" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_MEM_ERROR</name>
+        <initializer>(2)</initializer>
+        <briefdescription>
+<para>Memory allocation error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="505" column="9" bodyfile="mtb_radar_sensing.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gae2f78705f9352e5a6b402b4b31c478c5" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_PROCESS_ERROR</name>
+        <initializer>(3)</initializer>
+        <briefdescription>
+<para>Processing error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="506" column="9" bodyfile="mtb_radar_sensing.h" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga3f210f0256fca94b51f7685bc185cc2f" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_CONFIGURATION_ERROR</name>
+        <initializer>(4)</initializer>
+        <briefdescription>
+<para>Configuration error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="507" column="9" bodyfile="mtb_radar_sensing.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga2f101d8500c95b2a3470f2b8fc925695" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_BAD_PARAM</name>
+        <initializer>(5)</initializer>
+        <briefdescription>
+<para>The function input parameter is invalid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="508" column="9" bodyfile="mtb_radar_sensing.h" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" prot="public" static="no">
+        <name>CY_RSLT_MODULE_RADAR_SENSING</name>
+        <initializer>CY_RSLT_MODULE_MIDDLEWARE_BASE + 20</initializer>
+        <briefdescription>
+<para>RadarSensing module base. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="510" column="9" bodyfile="mtb_radar_sensing.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga450b60f3b9a93db1a4ecf0c7791cf9e4" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_INIT_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga6d3d44aebf0a334159ae7f6d0356c68e" kindref="member">MTB_RADAR_SENSING_INIT_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for initialization error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="511" column="9" bodyfile="mtb_radar_sensing.h" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gace63dc7338f2e04f6e8b8090ab927600" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_MEM_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga60464d3b1744789fcef956d7debaa7b1" kindref="member">MTB_RADAR_SENSING_MEM_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for memory allocation error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="515" column="9" bodyfile="mtb_radar_sensing.h" bodystart="515" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga3f53e4fb267624a69ee5698bed95b97e" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_PROCESS_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1gae2f78705f9352e5a6b402b4b31c478c5" kindref="member">MTB_RADAR_SENSING_PROCESS_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for processing error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="519" column="9" bodyfile="mtb_radar_sensing.h" bodystart="519" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gad10f75637f78b75bb5c72dc5a35c08cb" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_CONFIGURATION_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga3f210f0256fca94b51f7685bc185cc2f" kindref="member">MTB_RADAR_SENSING_CONFIGURATION_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for configuration error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="523" column="9" bodyfile="mtb_radar_sensing.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga64a9ee2b9fd4adb84817a4912b265717" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_BAD_PARAM</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga2f101d8500c95b2a3470f2b8fc925695" kindref="member">MTB_RADAR_SENSING_BAD_PARAM</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for configuration error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="527" column="9" bodyfile="mtb_radar_sensing.h" bodystart="527" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Macros for constants and error codes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

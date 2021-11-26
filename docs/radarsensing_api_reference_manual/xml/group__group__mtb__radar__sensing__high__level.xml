@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="group__group__mtb__radar__sensing__high__level" kind="group">
+    <compoundname>group_mtb_radar_sensing_high_level</compoundname>
+    <title>High Level</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_init</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context, const mtb_radar_sensing_hw_cfg_t *hw_cfg, mtb_radar_sensing_mask_t event_mask)</argsstring>
+        <name>mtb_radar_sensing_init</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__hw__cfg__t" kindref="compound">mtb_radar_sensing_hw_cfg_t</ref> *</type>
+          <declname>hw_cfg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" kindref="member">mtb_radar_sensing_mask_t</ref></type>
+          <declname>event_mask</declname>
+        </param>
+        <briefdescription>
+<para>This function allocates a new context of radar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hw_cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HW configuration of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of application events: mtb_radar_sensing_presence_events or mtb_radar_sensing_counter_events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status.</para>
+</simplesect>
+This function allocates a new context of radar. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="649" column="11" bodyfile="mtb_radar_sensing.c" bodystart="135" bodyend="242" declfile="mtb_radar_sensing.h" declline="649" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga881766eab1b5f3fe13d070ca05896eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtb_radar_sensing_platform_set_malloc_free</definition>
+        <argsstring>(void *(*malloc_func)(size_t), void(*free_func)(void *))</argsstring>
+        <name>mtb_radar_sensing_platform_set_malloc_free</name>
+        <param>
+          <type>void *(*)(size_t)</type>
+          <declname>malloc_func</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>free_func</declname>
+        </param>
+        <briefdescription>
+<para>This function sets the memory-managment functions used by the library. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If your environment provides an alternative to the libc allocator functions, you can set them with function <simplesect kind="note"><para>Must be called before <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref> </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>malloc_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer to the malloc function implementation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer to the free function implementation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="661" column="6" bodyfile="mtb_radar_sensing.c" bodystart="600" bodyend="604" declfile="mtb_radar_sensing.h" declline="661" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga2a7d61bf5d0380be2a6937033e118045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_set_parameter</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, const char *key, const char *value)</argsstring>
+        <name>mtb_radar_sensing_set_parameter</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>This function sets the value for a configuration parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>It is not thread-safe to make calls to <ref refid="group__group__mtb__radar__sensing__high__level_1ga2a7d61bf5d0380be2a6937033e118045" kindref="member">mtb_radar_sensing_set_parameter()</ref> while <ref refid="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" kindref="member">mtb_radar_sensing_process()</ref> is still active. A workaround in FreeRTOS would be to use each function in a different task and synchronize access via a mutex.</para>
+</simplesect>
+Supported keys and values for presence detection: <table rows="3" cols="4"><row>
+<entry thead="yes"><para>key </para>
+</entry><entry thead="yes"><para>default value </para>
+</entry><entry thead="yes"><para>valid values </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_presence_range_max&quot;</para>
+</entry><entry thead="no"><para>&quot;2.0&quot;</para>
+</entry><entry thead="no"><para>0.66 - 10.2 m</para>
+</entry><entry thead="no"><para>Maximum detection range. It is the maximum distance within which a target is detected. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_presence_sensitivity&quot;</para>
+</entry><entry thead="no"><para>&quot;medium&quot;</para>
+</entry><entry thead="no"><para>&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;</para>
+</entry><entry thead="no"><para>Adjusts the threshold values used in macro and micro movement detection. <linebreak/>
+ High sensitivity would mean higher responsiveness towards macro and micro movements. </para>
+</entry></row>
+</table>
+</para>
+<para>Supported keys and values for entrance counter: <table rows="9" cols="4"><row>
+<entry thead="yes"><para>key </para>
+</entry><entry thead="yes"><para>default value </para>
+</entry><entry thead="yes"><para>valid values/range </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_installation&quot;</para>
+</entry><entry thead="no"><para>&quot;side&quot;</para>
+</entry><entry thead="no"><para>&quot;ceiling&quot;, &quot;side&quot;</para>
+</entry><entry thead="no"><para>The location of sensor installation. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_orientation&quot;</para>
+</entry><entry thead="no"><para>&quot;portrait&quot;</para>
+</entry><entry thead="no"><para>&quot;portrait&quot;, &quot;landscape&quot;</para>
+</entry><entry thead="no"><para>The orientation of sensor. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_ceiling_height&quot;</para>
+</entry><entry thead="no"><para>&quot;2.5&quot;</para>
+</entry><entry thead="no"><para>0.0 - 3.0 m</para>
+</entry><entry thead="no"><para>The height at which the sensor is mounted. This parameter is only effective for a &quot;ceiling&quot; installation. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_entrance_width&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 3.0 m</para>
+</entry><entry thead="no"><para>The width of the passage or the entrance. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_sensitivity&quot;</para>
+</entry><entry thead="no"><para>&quot;0.5&quot;</para>
+</entry><entry thead="no"><para>0.0 - 1.0</para>
+</entry><entry thead="no"><para>Sensitivity of counter. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_traffic_light_zone&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 1.0 m</para>
+</entry><entry thead="no"><para>The width of radar field of view that represents the detection zone. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_reverse&quot;</para>
+</entry><entry thead="no"><para>&quot;false&quot;</para>
+</entry><entry thead="no"><para>&quot;true&quot;, &quot;false&quot;</para>
+</entry><entry thead="no"><para>Option to reverse directionality of counter. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_min_person_height&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 2.0 m</para>
+</entry><entry thead="no"><para>The minimum height of a person that is considered for detection. This is used to filter out pets. </para>
+</entry></row>
+</table>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of configuration parameter that is to be set (e.g. &quot;radar_presence_range_max&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the configuration parameter that is to be set as character string (e.g. &quot;1.0&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="701" column="11" bodyfile="mtb_radar_sensing.c" bodystart="244" bodyend="380" declfile="mtb_radar_sensing.h" declline="701" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga1dfcc048a572de614d64169eec620e4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_get_parameter</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, const char *key, char *value, size_t size)</argsstring>
+        <name>mtb_radar_sensing_get_parameter</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>This function gets the value of a configuration parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of configuration parameter that is to be read (e.g. &quot;radar_presence_range_max&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String buffer where the read value will be written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the string buffer. If size of the string buffer is not large enough a failure status is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="712" column="11" bodyfile="mtb_radar_sensing.c" bodystart="382" bodyend="488" declfile="mtb_radar_sensing.h" declline="712" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_process</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, mtb_radar_sensing_timestamp_t timestamp)</argsstring>
+        <name>mtb_radar_sensing_process</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref></type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+<para>This function processes time domain data acquired from radar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__group__mtb__radar__sensing__high__level_1ga12b35625c1e6efe75816f67e2b479434" kindref="member">mtb_radar_sensing_enable</ref> must be called prior to using this function. Must be called periodically from your main loop.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>System timestamp that will be used to approximate event timestamps in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="722" column="11" bodyfile="mtb_radar_sensing.c" bodystart="510" bodyend="537" declfile="mtb_radar_sensing.h" declline="722" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga12b35625c1e6efe75816f67e2b479434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_enable</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_enable</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This function enables RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="729" column="11" bodyfile="mtb_radar_sensing.c" bodystart="539" bodyend="554" declfile="mtb_radar_sensing.h" declline="729" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga07c962fe364bb14c7cd48adf7c8a484d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_disable</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_disable</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This function disables RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="736" column="11" bodyfile="mtb_radar_sensing.c" bodystart="556" bodyend="571" declfile="mtb_radar_sensing.h" declline="736" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga5793a52142f8f6e92ebc21b319fb77eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_free</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_free</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This functions frees up resources used by RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="743" column="11" bodyfile="mtb_radar_sensing.c" bodystart="573" bodyend="598" declfile="mtb_radar_sensing.h" declline="743" declcolumn="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>RadarSensing high level interface functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

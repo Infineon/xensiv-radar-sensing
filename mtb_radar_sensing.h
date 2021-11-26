@@ -1,6 +1,6 @@
 /**
  * \file mtb_radar_sensing.h
- * \version 0.5
+ * \version 1.0
  *
  * \brief
  * This file includes all the header files of the RadarSensing middleware.
@@ -127,15 +127,15 @@ different use cases.
 * //Activate radar reset pin
 * cyhal_gpio_init(hw_cfg.reset, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, true);
 *
-* //Enable LDO 
+* //Enable LDO
 * cyhal_gpio_init(hw_cfg.ldo_en, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, true);
 *
 * //Enable IRQ pin
 * cyhal_gpio_init(hw_cfg.irq, CYHAL_GPIO_DIR_INPUT, CYHAL_GPIO_DRIVE_PULLDOWN, false);
 *
-* //CS handled manually 
+* //CS handled manually
 * cyhal_gpio_init(hw_cfg.spi_cs, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG, true);
-* 
+*
 * //Configure SPI interface
 * if (cyhal_spi_init(hw_cfg.spi, CYBSP_SPI_MOSI, CYBSP_SPI_MISO, CYBSP_SPI_CLK, NC, NULL, 8,
 *                       CYHAL_SPI_MODE_00_MSB, false) != CY_RSLT_SUCCESS )
@@ -143,12 +143,12 @@ different use cases.
 *     CY_ASSERT(0);
 * }
 *
-* //Set the data rate to 25 Mbps 
+* //Set the data rate to 25 Mbps
 * if (cyhal_spi_set_frequency(hw_cfg.spi, SPI_FREQUENCY) != CY_RSLT_SUCCESS)
 * {
 *     CY_ASSERT(0);
 * }
-*    
+*
 * //Initialize the context of radar and configure events for presence detection application.
 * if (mtb_radar_sensing_init(&sensing_context, &hw_cfg, MTB_RADAR_SENSING_MASK_PRESENCE_EVENTS) != MTB_RADAR_SENSING_SUCCESS)
 * {
@@ -224,7 +224,7 @@ different use cases.
 *  - Users should replace currenttime initialization with their own APIs that provide system time in ms. \n
 *  - For a complete demonstration of the above code snippet using FreeRTOS, please refer to the Modus Toolbox Code
 Example
-*  on presence detection and entrance counter. 
+*  on presence detection and entrance counter.
 *  - For a MCU other than PSoC, users will have to configure SPI, HW accordingly. \n
 * \par
 * A similar approach can be taken to demonstrate the use of RadarSensing library APIs for entrance counter.
@@ -410,18 +410,21 @@ Example
 * \section section_radar_sensing_memory_usage Memory Usage
 ********************************************************************************
 *
+* Flash size - 49228 bytes
+* Data size  - 568 bytes
+*
 * The RadarSensing library runtime required stack and heap memory consumption
 * varies for different applications.
 *
 * Entrance counter:
 *
-* * Stack Size - 1065 bytes
-* * Heap Size - 15712 bytes
+* * Stack Size -  1792 bytes
+* * Heap Size -  25026 bytes
 *
 * Presence detection:
 *
-* * Stack Size - 1537 bytes
-* * Heap Size - 2568 bytes
+* * Stack Size -  1792 bytes
+* * Heap Size - 137837 bytes
 *
 ********************************************************************************
 * \section section_radar_sensing_more_information More Information
@@ -479,6 +482,7 @@ Example
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stddef.h>
 
 #include "cyhal.h"
 
@@ -497,20 +501,21 @@ extern "C" {
 #define MTB_RADAR_SENSING_PROCESS_DELAY (2)
 
 #define MTB_RADAR_SENSING_SUCCESS CY_RSLT_SUCCESS  /**< Result success       */
-#define MTB_RADAR_SENSING_INIT_ERROR (1U)          /**< initialization error */
-#define MTB_RADAR_SENSING_FREE_ERROR (1U)          /**< free resource error  */
-#define MTB_RADAR_SENSING_PROCESS_ERROR (2U)       /**< processing error     */
-#define MTB_RADAR_SENSING_CONFIGURATION_ERROR (3U) /**< configuration error  */
+#define MTB_RADAR_SENSING_INIT_ERROR (1)           /**< Initialization error */
+#define MTB_RADAR_SENSING_MEM_ERROR (2)            /**< Memory allocation error  */
+#define MTB_RADAR_SENSING_PROCESS_ERROR (3)        /**< Processing error     */
+#define MTB_RADAR_SENSING_CONFIGURATION_ERROR (4)  /**< Configuration error  */
+#define MTB_RADAR_SENSING_BAD_PARAM (5)            /**< The function input parameter is invalid */
 /** RadarSensing module base */
 #define CY_RSLT_MODULE_RADAR_SENSING CY_RSLT_MODULE_MIDDLEWARE_BASE + 20 // TODO align base
 #define MTB_RADAR_SENSING_RESULT_INIT_ERROR                                                                            \
     CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
                    CY_RSLT_MODULE_RADAR_SENSING,                                                                       \
                    (MTB_RADAR_SENSING_INIT_ERROR)) /**< Create a result for initialization error */
-#define MTB_RADAR_SENSING_RESULT_FREE_ERROR                                                                            \
+#define MTB_RADAR_SENSING_RESULT_MEM_ERROR                                                                            \
     CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
                    CY_RSLT_MODULE_RADAR_SENSING,                                                                       \
-                   (MTB_RADAR_SENSING_FREE_ERROR)) /**< Create a result for free resources error */
+                   (MTB_RADAR_SENSING_MEM_ERROR)) /**< Create a result for memory allocation error */
 #define MTB_RADAR_SENSING_RESULT_PROCESS_ERROR                                                                         \
     CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
                    CY_RSLT_MODULE_RADAR_SENSING,                                                                       \
@@ -519,6 +524,10 @@ extern "C" {
     CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
                    CY_RSLT_MODULE_RADAR_SENSING,                                                                       \
                    (MTB_RADAR_SENSING_CONFIGURATION_ERROR)) /**< Create a result for configuration error */
+#define MTB_RADAR_SENSING_RESULT_BAD_PARAM                                                                             \
+    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   CY_RSLT_MODULE_RADAR_SENSING,                                                                       \
+                   (MTB_RADAR_SENSING_BAD_PARAM)) /**< Create a result for configuration error */
 
 /******************************************************************************/
 /** \} \endcond **/
@@ -543,14 +552,11 @@ typedef uint32_t mtb_radar_sensing_timeinterval_t;
  */
 typedef enum
 {
-    MTB_RADAR_SENSING_EVENT_PRESENCE_IN =
-        300, /*!< Presence event: one or more people were detected in radar field of view within maximum range */
-    MTB_RADAR_SENSING_EVENT_PRESENCE_OUT =
-        301, /*!< Absence event: no human presence was detected in radar field of view within maximum range */
+    MTB_RADAR_SENSING_EVENT_PRESENCE_IN = 300, /*!< Presence event: one or more people were detected in radar field of view within maximum range */
+    MTB_RADAR_SENSING_EVENT_PRESENCE_OUT = 301, /*!< Absence event: no human presence was detected in radar field of view within maximum range */
     MTB_RADAR_SENSING_EVENT_COUNTER_IN = 310,  /*!< Counter in event: a person has entered through the counter */
     MTB_RADAR_SENSING_EVENT_COUNTER_OUT = 311, /*!< Counter out event: a person has exited through the counter */
-    MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED =
-        312, /*!< Counter occupied: a person is still present in the traffic light zone */
+    MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED = 312, /*!< Counter occupied: a person is still present in the traffic light zone */
     MTB_RADAR_SENSING_EVENT_COUNTER_FREE = 313, /*!< Counter free: no human presence in the traffic light zone  */
 } mtb_radar_sensing_event_t;
 
@@ -644,6 +650,17 @@ cy_rslt_t mtb_radar_sensing_init(mtb_radar_sensing_context_t *context,
                                  const mtb_radar_sensing_hw_cfg_t *hw_cfg,
                                  mtb_radar_sensing_mask_t event_mask);
 
+
+/**
+ * @brief This function sets the memory-managment functions used by the library.
+ * If your environment provides an alternative to the libc allocator functions, you can set them with function
+ * @note Must be called before \ref mtb_radar_sensing_init
+ * @param malloc_func Function pointer to the malloc function implementation.
+ * @param free_func Function pointer to the free function implementation.
+ */
+void mtb_radar_sensing_platform_set_malloc_free(void * (*malloc_func)( size_t ),
+                                                void (*free_func)( void * ) );
+
 /**
  * @brief This function sets the value for a configuration parameter.
  *
@@ -681,7 +698,7 @@ cy_rslt_t mtb_radar_sensing_init(mtb_radar_sensing_context_t *context,
  * @param value The value of the configuration parameter that is to be set as character string (e.g. "1.0").
  * @return cy_rslt_t A success or a failure status.
  */
-cy_rslt_t mtb_radar_sensing_set_parameter(mtb_radar_sensing_context_t *context, const char *key, const char *value);
+cy_rslt_t mtb_radar_sensing_set_parameter(const mtb_radar_sensing_context_t *context, const char *key, const char *value);
 
 /**
  * @brief This function gets the value of a configuration parameter.
@@ -689,38 +706,34 @@ cy_rslt_t mtb_radar_sensing_set_parameter(mtb_radar_sensing_context_t *context, 
  * @param context Context of radar.
  * @param key The type of configuration parameter that is to be read (e.g. "radar_presence_range_max").
  * @param value String buffer where the read value will be written to.
- * @todo How much is too little? We need to specify this else the answer is vague.
- * @param size Size of the string buffer. If size is too little, a failure status is returned.
+ * @param size Size of the string buffer. If size of the string buffer is not large enough a failure status is returned.
  * @return cy_rslt_t A success or a failure status.
  */
-cy_rslt_t mtb_radar_sensing_get_parameter(mtb_radar_sensing_context_t *context, const char *key, char *value, int size);
+cy_rslt_t mtb_radar_sensing_get_parameter(const mtb_radar_sensing_context_t *context, const char *key, char *value, size_t size);
 
 /**
  * @brief This function processes time domain data acquired from radar. \ref mtb_radar_sensing_enable must be called
- * prior to using this function. This function needs to be called every 2ms else event detection
- * will be delayed or missed.
- * @todo Is 2ms a reasonable number? Previous description mentioned calling this function often
- * which is totally vague and would confuse the user.
+ * prior to using this function. Must be called periodically from your main loop.
  *
  * @param context Context of radar.
  * @param timestamp System timestamp that will be used to approximate event timestamps in milliseconds.
  * @return cy_rslt_t A success or a failure status.
  */
-cy_rslt_t mtb_radar_sensing_process(mtb_radar_sensing_context_t *context, mtb_radar_sensing_timestamp_t timestamp);
+cy_rslt_t mtb_radar_sensing_process(const mtb_radar_sensing_context_t *context, mtb_radar_sensing_timestamp_t timestamp);
 
 /**
  * @brief This function enables RadarSensing.
  * @param context Context of radar.
  * @return cy_rslt_t A success or a failure status.
  */
-cy_rslt_t mtb_radar_sensing_enable(mtb_radar_sensing_context_t *context);
+cy_rslt_t mtb_radar_sensing_enable(const mtb_radar_sensing_context_t *context);
 
 /**
  * @brief This function disables RadarSensing.
  * @param context Context of radar.
  * @return cy_rslt_t A success or a failure status.
  */
-cy_rslt_t mtb_radar_sensing_disable(mtb_radar_sensing_context_t *context);
+cy_rslt_t mtb_radar_sensing_disable(const mtb_radar_sensing_context_t *context);
 
 /**
  * @brief This functions frees up resources used by RadarSensing.

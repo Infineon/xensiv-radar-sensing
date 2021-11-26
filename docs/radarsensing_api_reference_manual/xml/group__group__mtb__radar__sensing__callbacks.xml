@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="group__group__mtb__radar__sensing__callbacks" kind="group">
+    <compoundname>group_mtb_radar_sensing_callbacks</compoundname>
+    <title>Callbacks</title>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* mtb_radar_sensing_callback_t) (mtb_radar_sensing_context_t *context, mtb_radar_sensing_event_t event, mtb_radar_sensing_event_info_t *event_info, void *data)</definition>
+        <argsstring>)(mtb_radar_sensing_context_t *context, mtb_radar_sensing_event_t event, mtb_radar_sensing_event_info_t *event_info, void *data)</argsstring>
+        <name>mtb_radar_sensing_callback_t</name>
+        <briefdescription>
+<para>Callback function prototype that can be used to handle <ref refid="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" kindref="member">mtb_radar_sensing_event_t</ref> events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The callback needs to be registered to <ref refid="group__group__mtb__radar__sensing__callbacks_1ga972c87798ddc18542625e8c6052ea580" kindref="member">mtb_radar_sensing_register_callback()</ref>. The timestamp indicates the start of events and reflects current system time that is passed to <ref refid="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" kindref="member">mtb_radar_sensing_process()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="760" column="9" bodyfile="mtb_radar_sensing.h" bodystart="760" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__callbacks_1ga972c87798ddc18542625e8c6052ea580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_register_callback</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context, mtb_radar_sensing_callback_t callback, void *data)</argsstring>
+        <name>mtb_radar_sensing_register_callback</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" kindref="member">mtb_radar_sensing_callback_t</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>This function registers callback for radar service. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback is invoked as soon as an event is detected.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data pointer that is passed to the invoke of the event callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="774" column="11" bodyfile="mtb_radar_sensing.c" bodystart="490" bodyend="508" declfile="mtb_radar_sensing.h" declline="774" declcolumn="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Callbacks used in the library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

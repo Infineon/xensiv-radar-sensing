@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="page_mounting_recommendations" kind="page">
+    <compoundname>page_mounting_recommendations</compoundname>
+    <title>Mounting recommendations</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="page_mounting_recommendations_1section_mounting_recommendations_presence">
+<title>Presence detection application</title>
+<para>The connected sensor kit with the Radar Wing Board can be mounted anywhere on the wall in front facing orientation at 1-1.5 meters height from the ground level. The following figure provides an illustration of radar coverage for macro and micro movements.</para>
+<para><image type="html" name="radar_coverage.png" width="700px">Radar coverage for macro and micro movements</image>
+ <image type="latex" name="radar_coverage.png"></image>
+</para>
+</sect1>
+<sect1 id="page_mounting_recommendations_1section_mounting_recommendations_counter">
+<title>Entrance counter application</title>
+<para>The connected sensor kit with the Radar Wing Board can be mounted on a side or a ceiling of an entrance as shown in figure below.</para>
+<para><image type="html" name="mounting_location.png" width="600px">Mounting locations for connected sensor kit</image>
+ <image type="latex" name="mounting_location.png"></image>
+</para>
+<para>The following figure shows a ceiling installation of the kit. It should be noted that moving objects or swinging door should be avoided in the radar field of view. Current release of entrance counter application does not have a workaround to handle swinging doors. For optimal performance, the configured ceiling height should be less than the actual ceiling height. For example, if the ceiling or top of the door is 3m high, the configured ceiling height should be less than or equal to 2m.</para>
+<para><simplesect kind="note"><para>It is recommended to mount the sensor kit on a ceiling for optimal performance.</para>
+</simplesect>
+<image type="html" name="ceiling_mount.png" width="500px">Ceiling installation of connected sensor kit</image>
+ <image type="latex" name="ceiling_mount.png"></image>
+</para>
+<para>The figure below illustrates a side installation. For optimal performance, the configured entrance width should be less than the actual entrance width. It is recommended (but not required) to configure entrance width ~30cm less than the actual width. This makes sure reflections do not interfere with counting.</para>
+<para><image type="html" name="side_mount.png" width="500px">Side installation of connected sensor kit</image>
+ <image type="latex" name="side_mount.png"></image>
+ </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="structmtb__radar__sensing__t" kind="struct" language="C++" prot="public">
+    <compoundname>mtb_radar_sensing_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1aa258d825b876c055fff09d1336d136c8" prot="public" static="no" mutable="no">
+        <type>ifx_radar_instance_t</type>
+        <definition>ifx_radar_instance_t mtb_radar_sensing_t::radar_instance</definition>
+        <argsstring></argsstring>
+        <name>radar_instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="37" column="26" bodyfile="mtb_radar_sensing.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1a4d1c3528e5b0a8db116f82314bba1ea8" prot="public" static="no" mutable="no">
+        <type>ifx_radar_fmcw_context_t</type>
+        <definition>ifx_radar_fmcw_context_t mtb_radar_sensing_t::ifx_radar_fmcw_context</definition>
+        <argsstring></argsstring>
+        <name>ifx_radar_fmcw_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="38" column="30" bodyfile="mtb_radar_sensing.c" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1aec38a9695eca24422df3fe8d54bdc727" prot="public" static="no" mutable="no">
+        <type><ref refid="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" kindref="member">mtb_radar_sensing_callback_t</ref></type>
+        <definition>mtb_radar_sensing_callback_t mtb_radar_sensing_t::radar_sensing_callback</definition>
+        <argsstring></argsstring>
+        <name>radar_sensing_callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="39" column="34" bodyfile="mtb_radar_sensing.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1aa516f5d4aecd98c3bbb1108de754b87e" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* mtb_radar_sensing_t::radar_sensing_callback_data</definition>
+        <argsstring></argsstring>
+        <name>radar_sensing_callback_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="40" column="10" bodyfile="mtb_radar_sensing.c" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1a441d0daab2208e98d174b0a10f1766fa" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mtb_radar_sensing_t::frame_buffer_ff_ready</definition>
+        <argsstring></argsstring>
+        <name>frame_buffer_ff_ready</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="41" column="10" bodyfile="mtb_radar_sensing.c" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1afcd4e8f7b98d8df65711f7111e916999" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mtb_radar_sensing_t::frame_buffer_ff_processed</definition>
+        <argsstring></argsstring>
+        <name>frame_buffer_ff_processed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="42" column="10" bodyfile="mtb_radar_sensing.c" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1af3ecf82094b8d55eed68fd24571930cc" prot="public" static="no" mutable="no">
+        <type>ifx_ff_frame_t</type>
+        <definition>ifx_ff_frame_t mtb_radar_sensing_t::frame_buffer_ff</definition>
+        <argsstring></argsstring>
+        <name>frame_buffer_ff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="43" column="20" bodyfile="mtb_radar_sensing.c" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1aca7a345b28681e84d574f3e06496da86" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_installation[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_installation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="45" column="10" bodyfile="mtb_radar_sensing.c" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1af2e486d21ede2fc423e6e67860535524" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_orientation[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_orientation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="46" column="10" bodyfile="mtb_radar_sensing.c" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1a40ac2808e2e88f285df8270900bcbe68" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_ceiling_height[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_ceiling_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="47" column="10" bodyfile="mtb_radar_sensing.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1accda90f334a0dd51a445ed3aa25ea434" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_entrance_width[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_entrance_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="48" column="10" bodyfile="mtb_radar_sensing.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1acaaf9a418b8e59829a4a323beca06e78" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_sensitivity[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_sensitivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="49" column="10" bodyfile="mtb_radar_sensing.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1a75f25fb3fb85c3f7fe0c73a9283002b8" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_traffic_light_zone[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_traffic_light_zone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="50" column="10" bodyfile="mtb_radar_sensing.c" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1afb17b60fa7ab286aa1756f71eb8adb42" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_reverse[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_reverse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="51" column="10" bodyfile="mtb_radar_sensing.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1a59c7f0752ce1f5222dfadcd9585a1a94" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_counter_min_person_height[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_counter_min_person_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="52" column="10" bodyfile="mtb_radar_sensing.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1aed2ee43c5866fbd3cc90f44065bf295c" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_presence_range_max[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_presence_range_max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="53" column="10" bodyfile="mtb_radar_sensing.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__t_1ad0fe09e4054b94c078e47a1caa090298" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtb_radar_sensing_t::radar_presence_sensitivity[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</definition>
+        <argsstring>[IFX_RADAR_SENSING_MAX_VALUE_LENGTH]</argsstring>
+        <name>radar_presence_sensitivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.c" line="54" column="10" bodyfile="mtb_radar_sensing.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>mtb_radar_sensing_context_t</label>
+        <link refid="structmtb__radar__sensing__context__t"/>
+      </node>
+      <node id="1">
+        <label>mtb_radar_sensing_t</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>radar_sensing_callback</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mtb_radar_sensing.c" line="35" column="1" bodyfile="mtb_radar_sensing.c" bodystart="36" bodyend="55"/>
+    <listofallmembers>
+      <member refid="structmtb__radar__sensing__t_1af3ecf82094b8d55eed68fd24571930cc" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>frame_buffer_ff</name></member>
+      <member refid="structmtb__radar__sensing__t_1afcd4e8f7b98d8df65711f7111e916999" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>frame_buffer_ff_processed</name></member>
+      <member refid="structmtb__radar__sensing__t_1a441d0daab2208e98d174b0a10f1766fa" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>frame_buffer_ff_ready</name></member>
+      <member refid="structmtb__radar__sensing__t_1a4d1c3528e5b0a8db116f82314bba1ea8" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>ifx_radar_fmcw_context</name></member>
+      <member refid="structmtb__radar__sensing__t_1a40ac2808e2e88f285df8270900bcbe68" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_ceiling_height</name></member>
+      <member refid="structmtb__radar__sensing__t_1accda90f334a0dd51a445ed3aa25ea434" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_entrance_width</name></member>
+      <member refid="structmtb__radar__sensing__t_1aca7a345b28681e84d574f3e06496da86" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_installation</name></member>
+      <member refid="structmtb__radar__sensing__t_1a59c7f0752ce1f5222dfadcd9585a1a94" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_min_person_height</name></member>
+      <member refid="structmtb__radar__sensing__t_1af2e486d21ede2fc423e6e67860535524" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_orientation</name></member>
+      <member refid="structmtb__radar__sensing__t_1afb17b60fa7ab286aa1756f71eb8adb42" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_reverse</name></member>
+      <member refid="structmtb__radar__sensing__t_1acaaf9a418b8e59829a4a323beca06e78" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_sensitivity</name></member>
+      <member refid="structmtb__radar__sensing__t_1a75f25fb3fb85c3f7fe0c73a9283002b8" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_counter_traffic_light_zone</name></member>
+      <member refid="structmtb__radar__sensing__t_1aa258d825b876c055fff09d1336d136c8" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_instance</name></member>
+      <member refid="structmtb__radar__sensing__t_1aed2ee43c5866fbd3cc90f44065bf295c" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_presence_range_max</name></member>
+      <member refid="structmtb__radar__sensing__t_1ad0fe09e4054b94c078e47a1caa090298" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_presence_sensitivity</name></member>
+      <member refid="structmtb__radar__sensing__t_1aec38a9695eca24422df3fe8d54bdc727" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_sensing_callback</name></member>
+      <member refid="structmtb__radar__sensing__t_1aa516f5d4aecd98c3bbb1108de754b87e" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_t</scope><name>radar_sensing_callback_data</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

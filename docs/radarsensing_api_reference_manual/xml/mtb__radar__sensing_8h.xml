@@ -1,0 +1,1026 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="mtb__radar__sensing_8h" kind="file" language="C++">
+    <compoundname>mtb_radar_sensing.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="yes">cyhal.h</includes>
+    <includedby refid="mtb__radar__sensing_8c" local="yes">mtb_radar_sensing.c</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+      <node id="1">
+        <label>mtb_radar_sensing.h</label>
+        <link refid="mtb__radar__sensing_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>cyhal.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structmtb__radar__sensing__event__info__t" prot="public">mtb_radar_sensing_event_info_t</innerclass>
+    <innerclass refid="structmtb__radar__sensing__presence__event__info__t" prot="public">mtb_radar_sensing_presence_event_info_t</innerclass>
+    <innerclass refid="structmtb__radar__sensing__counter__event__info__t" prot="public">mtb_radar_sensing_counter_event_info_t</innerclass>
+    <innerclass refid="structmtb__radar__sensing__hw__cfg__t" prot="public">mtb_radar_sensing_hw_cfg_t</innerclass>
+    <innerclass refid="structmtb__radar__sensing__context__t" prot="public">mtb_radar_sensing_context_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga1a00afd852547d57f23c2b3a66ccdd39" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_PROCESS_DELAY</name>
+        <initializer>(2)</initializer>
+        <briefdescription>
+<para>Recommended delay time (ms) after each call to mtb_radar_sensing_process. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="501" column="9" bodyfile="mtb_radar_sensing.h" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga253b91f78f8359daba083bec491afd12" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_SUCCESS</name>
+        <initializer>CY_RSLT_SUCCESS</initializer>
+        <briefdescription>
+<para>Result success <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="503" column="9" bodyfile="mtb_radar_sensing.h" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga6d3d44aebf0a334159ae7f6d0356c68e" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_INIT_ERROR</name>
+        <initializer>(1)</initializer>
+        <briefdescription>
+<para>Initialization error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="504" column="9" bodyfile="mtb_radar_sensing.h" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga60464d3b1744789fcef956d7debaa7b1" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_MEM_ERROR</name>
+        <initializer>(2)</initializer>
+        <briefdescription>
+<para>Memory allocation error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="505" column="9" bodyfile="mtb_radar_sensing.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gae2f78705f9352e5a6b402b4b31c478c5" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_PROCESS_ERROR</name>
+        <initializer>(3)</initializer>
+        <briefdescription>
+<para>Processing error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="506" column="9" bodyfile="mtb_radar_sensing.h" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga3f210f0256fca94b51f7685bc185cc2f" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_CONFIGURATION_ERROR</name>
+        <initializer>(4)</initializer>
+        <briefdescription>
+<para>Configuration error <linebreak/>
+ </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="507" column="9" bodyfile="mtb_radar_sensing.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga2f101d8500c95b2a3470f2b8fc925695" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_BAD_PARAM</name>
+        <initializer>(5)</initializer>
+        <briefdescription>
+<para>The function input parameter is invalid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="508" column="9" bodyfile="mtb_radar_sensing.h" bodystart="508" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" prot="public" static="no">
+        <name>CY_RSLT_MODULE_RADAR_SENSING</name>
+        <initializer>CY_RSLT_MODULE_MIDDLEWARE_BASE + 20</initializer>
+        <briefdescription>
+<para>RadarSensing module base. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="510" column="9" bodyfile="mtb_radar_sensing.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga450b60f3b9a93db1a4ecf0c7791cf9e4" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_INIT_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga6d3d44aebf0a334159ae7f6d0356c68e" kindref="member">MTB_RADAR_SENSING_INIT_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for initialization error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="511" column="9" bodyfile="mtb_radar_sensing.h" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gace63dc7338f2e04f6e8b8090ab927600" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_MEM_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga60464d3b1744789fcef956d7debaa7b1" kindref="member">MTB_RADAR_SENSING_MEM_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for memory allocation error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="515" column="9" bodyfile="mtb_radar_sensing.h" bodystart="515" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga3f53e4fb267624a69ee5698bed95b97e" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_PROCESS_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1gae2f78705f9352e5a6b402b4b31c478c5" kindref="member">MTB_RADAR_SENSING_PROCESS_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for processing error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="519" column="9" bodyfile="mtb_radar_sensing.h" bodystart="519" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1gad10f75637f78b75bb5c72dc5a35c08cb" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_CONFIGURATION_ERROR</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga3f210f0256fca94b51f7685bc185cc2f" kindref="member">MTB_RADAR_SENSING_CONFIGURATION_ERROR</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for configuration error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="523" column="9" bodyfile="mtb_radar_sensing.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__group__mtb__radar__sensing__macros_1ga64a9ee2b9fd4adb84817a4912b265717" prot="public" static="no">
+        <name>MTB_RADAR_SENSING_RESULT_BAD_PARAM</name>
+        <initializer>    CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,                                                                                 \
+                   <ref refid="group__group__mtb__radar__sensing__macros_1ga419d8e3286b07fec96057d305cf93bfc" kindref="member">CY_RSLT_MODULE_RADAR_SENSING</ref>,                                                                       \
+                   (<ref refid="group__group__mtb__radar__sensing__macros_1ga2f101d8500c95b2a3470f2b8fc925695" kindref="member">MTB_RADAR_SENSING_BAD_PARAM</ref>))</initializer>
+        <briefdescription>
+<para>Create a result for configuration error. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="527" column="9" bodyfile="mtb_radar_sensing.h" bodystart="527" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" prot="public" static="no" strong="no">
+        <type></type>
+        <name>mtb_radar_sensing_event_t</name>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a478914ef0b0e7e42c114198537344237" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_PRESENCE_IN</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+<para>Presence event: one or more people were detected in radar field of view within maximum range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793affa8349aa5c38952e9a7a24888c0144d" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_PRESENCE_OUT</name>
+          <initializer>= 301</initializer>
+          <briefdescription>
+<para>Absence event: no human presence was detected in radar field of view within maximum range. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a6ee25c109aa9db26e77fb771f470044f" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_IN</name>
+          <initializer>= 310</initializer>
+          <briefdescription>
+<para>Counter in event: a person has entered through the counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ac267bfa78203ba1e9a3f1bf847a0588f" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_OUT</name>
+          <initializer>= 311</initializer>
+          <briefdescription>
+<para>Counter out event: a person has exited through the counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae1b2f192f0c68e8e7d8e2a5ce7bb4ba7" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED</name>
+          <initializer>= 312</initializer>
+          <briefdescription>
+<para>Counter occupied: a person is still present in the traffic light zone. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae53d7986140f07944c986b62bd90c111" prot="public">
+          <name>MTB_RADAR_SENSING_EVENT_COUNTER_FREE</name>
+          <initializer>= 313</initializer>
+          <briefdescription>
+<para>Counter free: no human presence in the traffic light zone <linebreak/>
+ </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Type of events that are detected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="553" column="1" bodyfile="mtb_radar_sensing.h" bodystart="554" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>mtb_radar_sensing_mask_t</name>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa0f3b68c38b6dcf3197492f876b8994e6" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No events. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7facdeca8a2712f56b56673d294c809e0a1" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_PRESENCE_EVENTS</name>
+          <initializer>= (1 &lt;&lt; 8)</initializer>
+          <briefdescription>
+<para>Events for presence detection. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa479f9b8eb4e8fcc1447ede4f4813c859" prot="public">
+          <name>MTB_RADAR_SENSING_MASK_COUNTER_EVENTS</name>
+          <initializer>= (2 &lt;&lt; 8)</initializer>
+          <briefdescription>
+<para>Events for entrance counter. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Type of application events that needs to be configured with <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="567" column="1" bodyfile="mtb_radar_sensing.h" bodystart="568" bodyend="572"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" prot="public" static="no">
+        <type>uint64_t</type>
+        <definition>typedef uint64_t mtb_radar_sensing_timestamp_t</definition>
+        <argsstring></argsstring>
+        <name>mtb_radar_sensing_timestamp_t</name>
+        <briefdescription>
+<para>timestamp in milliseconds </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="543" column="18" bodyfile="mtb_radar_sensing.h" bodystart="543" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__structures_1ga3c630c4379dae615b885a4ff82813010" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t mtb_radar_sensing_timeinterval_t</definition>
+        <argsstring></argsstring>
+        <name>mtb_radar_sensing_timeinterval_t</name>
+        <briefdescription>
+<para>time interval in milliseconds </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="548" column="18" bodyfile="mtb_radar_sensing.h" bodystart="548" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* mtb_radar_sensing_callback_t) (mtb_radar_sensing_context_t *context, mtb_radar_sensing_event_t event, mtb_radar_sensing_event_info_t *event_info, void *data)</definition>
+        <argsstring>)(mtb_radar_sensing_context_t *context, mtb_radar_sensing_event_t event, mtb_radar_sensing_event_info_t *event_info, void *data)</argsstring>
+        <name>mtb_radar_sensing_callback_t</name>
+        <briefdescription>
+<para>Callback function prototype that can be used to handle <ref refid="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" kindref="member">mtb_radar_sensing_event_t</ref> events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The callback needs to be registered to <ref refid="group__group__mtb__radar__sensing__callbacks_1ga972c87798ddc18542625e8c6052ea580" kindref="member">mtb_radar_sensing_register_callback()</ref>. The timestamp indicates the start of events and reflects current system time that is passed to <ref refid="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" kindref="member">mtb_radar_sensing_process()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="760" column="9" bodyfile="mtb_radar_sensing.h" bodystart="760" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_init</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context, const mtb_radar_sensing_hw_cfg_t *hw_cfg, mtb_radar_sensing_mask_t event_mask)</argsstring>
+        <name>mtb_radar_sensing_init</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__hw__cfg__t" kindref="compound">mtb_radar_sensing_hw_cfg_t</ref> *</type>
+          <declname>hw_cfg</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" kindref="member">mtb_radar_sensing_mask_t</ref></type>
+          <declname>event_mask</declname>
+        </param>
+        <briefdescription>
+<para>This function allocates a new context of radar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hw_cfg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HW configuration of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event_mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of application events: mtb_radar_sensing_presence_events or mtb_radar_sensing_counter_events. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status.</para>
+</simplesect>
+This function allocates a new context of radar. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="649" column="11" bodyfile="mtb_radar_sensing.c" bodystart="135" bodyend="242" declfile="mtb_radar_sensing.h" declline="649" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga881766eab1b5f3fe13d070ca05896eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mtb_radar_sensing_platform_set_malloc_free</definition>
+        <argsstring>(void *(*malloc_func)(size_t), void(*free_func)(void *))</argsstring>
+        <name>mtb_radar_sensing_platform_set_malloc_free</name>
+        <param>
+          <type>void *(*)(size_t)</type>
+          <declname>malloc_func</declname>
+        </param>
+        <param>
+          <type>void(*)(void *)</type>
+          <declname>free_func</declname>
+        </param>
+        <briefdescription>
+<para>This function sets the memory-managment functions used by the library. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If your environment provides an alternative to the libc allocator functions, you can set them with function <simplesect kind="note"><para>Must be called before <ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref> </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>malloc_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer to the malloc function implementation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>free_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function pointer to the free function implementation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="661" column="6" bodyfile="mtb_radar_sensing.c" bodystart="600" bodyend="604" declfile="mtb_radar_sensing.h" declline="661" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga2a7d61bf5d0380be2a6937033e118045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_set_parameter</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, const char *key, const char *value)</argsstring>
+        <name>mtb_radar_sensing_set_parameter</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>This function sets the value for a configuration parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>It is not thread-safe to make calls to <ref refid="group__group__mtb__radar__sensing__high__level_1ga2a7d61bf5d0380be2a6937033e118045" kindref="member">mtb_radar_sensing_set_parameter()</ref> while <ref refid="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" kindref="member">mtb_radar_sensing_process()</ref> is still active. A workaround in FreeRTOS would be to use each function in a different task and synchronize access via a mutex.</para>
+</simplesect>
+Supported keys and values for presence detection: <table rows="3" cols="4"><row>
+<entry thead="yes"><para>key </para>
+</entry><entry thead="yes"><para>default value </para>
+</entry><entry thead="yes"><para>valid values </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_presence_range_max&quot;</para>
+</entry><entry thead="no"><para>&quot;2.0&quot;</para>
+</entry><entry thead="no"><para>0.66 - 10.2 m</para>
+</entry><entry thead="no"><para>Maximum detection range. It is the maximum distance within which a target is detected. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_presence_sensitivity&quot;</para>
+</entry><entry thead="no"><para>&quot;medium&quot;</para>
+</entry><entry thead="no"><para>&quot;low&quot;, &quot;medium&quot;, &quot;high&quot;</para>
+</entry><entry thead="no"><para>Adjusts the threshold values used in macro and micro movement detection. <linebreak/>
+ High sensitivity would mean higher responsiveness towards macro and micro movements. </para>
+</entry></row>
+</table>
+</para>
+<para>Supported keys and values for entrance counter: <table rows="9" cols="4"><row>
+<entry thead="yes"><para>key </para>
+</entry><entry thead="yes"><para>default value </para>
+</entry><entry thead="yes"><para>valid values/range </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_installation&quot;</para>
+</entry><entry thead="no"><para>&quot;side&quot;</para>
+</entry><entry thead="no"><para>&quot;ceiling&quot;, &quot;side&quot;</para>
+</entry><entry thead="no"><para>The location of sensor installation. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_orientation&quot;</para>
+</entry><entry thead="no"><para>&quot;portrait&quot;</para>
+</entry><entry thead="no"><para>&quot;portrait&quot;, &quot;landscape&quot;</para>
+</entry><entry thead="no"><para>The orientation of sensor. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_ceiling_height&quot;</para>
+</entry><entry thead="no"><para>&quot;2.5&quot;</para>
+</entry><entry thead="no"><para>0.0 - 3.0 m</para>
+</entry><entry thead="no"><para>The height at which the sensor is mounted. This parameter is only effective for a &quot;ceiling&quot; installation. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_entrance_width&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 3.0 m</para>
+</entry><entry thead="no"><para>The width of the passage or the entrance. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_sensitivity&quot;</para>
+</entry><entry thead="no"><para>&quot;0.5&quot;</para>
+</entry><entry thead="no"><para>0.0 - 1.0</para>
+</entry><entry thead="no"><para>Sensitivity of counter. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_traffic_light_zone&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 1.0 m</para>
+</entry><entry thead="no"><para>The width of radar field of view that represents the detection zone. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_reverse&quot;</para>
+</entry><entry thead="no"><para>&quot;false&quot;</para>
+</entry><entry thead="no"><para>&quot;true&quot;, &quot;false&quot;</para>
+</entry><entry thead="no"><para>Option to reverse directionality of counter. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;radar_counter_min_person_height&quot;</para>
+</entry><entry thead="no"><para>&quot;1.0&quot;</para>
+</entry><entry thead="no"><para>0.0 - 2.0 m</para>
+</entry><entry thead="no"><para>The minimum height of a person that is considered for detection. This is used to filter out pets. </para>
+</entry></row>
+</table>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of configuration parameter that is to be set (e.g. &quot;radar_presence_range_max&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the configuration parameter that is to be set as character string (e.g. &quot;1.0&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="701" column="11" bodyfile="mtb_radar_sensing.c" bodystart="244" bodyend="380" declfile="mtb_radar_sensing.h" declline="701" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga1dfcc048a572de614d64169eec620e4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_get_parameter</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, const char *key, char *value, size_t size)</argsstring>
+        <name>mtb_radar_sensing_get_parameter</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>This function gets the value of a configuration parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of configuration parameter that is to be read (e.g. &quot;radar_presence_range_max&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String buffer where the read value will be written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the string buffer. If size of the string buffer is not large enough a failure status is returned. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="712" column="11" bodyfile="mtb_radar_sensing.c" bodystart="382" bodyend="488" declfile="mtb_radar_sensing.h" declline="712" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_process</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context, mtb_radar_sensing_timestamp_t timestamp)</argsstring>
+        <name>mtb_radar_sensing_process</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref></type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+<para>This function processes time domain data acquired from radar. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="group__group__mtb__radar__sensing__high__level_1ga12b35625c1e6efe75816f67e2b479434" kindref="member">mtb_radar_sensing_enable</ref> must be called prior to using this function. Must be called periodically from your main loop.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>System timestamp that will be used to approximate event timestamps in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="722" column="11" bodyfile="mtb_radar_sensing.c" bodystart="510" bodyend="537" declfile="mtb_radar_sensing.h" declline="722" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga12b35625c1e6efe75816f67e2b479434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_enable</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_enable</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This function enables RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="729" column="11" bodyfile="mtb_radar_sensing.c" bodystart="539" bodyend="554" declfile="mtb_radar_sensing.h" declline="729" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga07c962fe364bb14c7cd48adf7c8a484d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_disable</definition>
+        <argsstring>(const mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_disable</name>
+        <param>
+          <type>const <ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This function disables RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="736" column="11" bodyfile="mtb_radar_sensing.c" bodystart="556" bodyend="571" declfile="mtb_radar_sensing.h" declline="736" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__high__level_1ga5793a52142f8f6e92ebc21b319fb77eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_free</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context)</argsstring>
+        <name>mtb_radar_sensing_free</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>This functions frees up resources used by RadarSensing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="743" column="11" bodyfile="mtb_radar_sensing.c" bodystart="573" bodyend="598" declfile="mtb_radar_sensing.h" declline="743" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__group__mtb__radar__sensing__callbacks_1ga972c87798ddc18542625e8c6052ea580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cy_rslt_t</type>
+        <definition>cy_rslt_t mtb_radar_sensing_register_callback</definition>
+        <argsstring>(mtb_radar_sensing_context_t *context, mtb_radar_sensing_callback_t callback, void *data)</argsstring>
+        <name>mtb_radar_sensing_register_callback</name>
+        <param>
+          <type><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" kindref="member">mtb_radar_sensing_callback_t</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>This function registers callback for radar service. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Callback is invoked as soon as an event is detected.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Context of radar. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data pointer that is passed to the invoke of the event callback. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cy_rslt_t A success or a failure status. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="774" column="11" bodyfile="mtb_radar_sensing.c" bodystart="490" bodyend="508" declfile="mtb_radar_sensing.h" declline="774" declcolumn="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file includes all the header files of the RadarSensing middleware. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains constants, structures and function prototypes used in RadarSensing library.</para>
+<para><simplesect kind="version"><para>1.0</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (C) 2021 Infineon Technologies AG. All rights reserved.</para>
+</simplesect>
+Infineon Technologies AG (INFINEON) is supplying this file for use exclusively with Infineon&apos;s sensor products. This file can be freely distributed within development tools and software supporting such products.</para>
+<para>THIS SOFTWARE IS PROVIDED &quot;AS IS&quot;. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. INFINEON SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="481"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cyhal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"></highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************</highlight></codeline>
+<codeline lineno="494"><highlight class="comment"><sp/>*<sp/>Macros</highlight></codeline>
+<codeline lineno="495"><highlight class="comment"><sp/>*******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="498"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_PROCESS_DELAY<sp/>(2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_SUCCESS<sp/>CY_RSLT_SUCCESS<sp/><sp/></highlight></codeline>
+<codeline lineno="504"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_INIT_ERROR<sp/>(1)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="505"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_MEM_ERROR<sp/>(2)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="506"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_PROCESS_ERROR<sp/>(3)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="507"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_CONFIGURATION_ERROR<sp/>(4)<sp/><sp/></highlight></codeline>
+<codeline lineno="508"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_BAD_PARAM<sp/>(5)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="510"><highlight class="preprocessor">#define<sp/>CY_RSLT_MODULE_RADAR_SENSING<sp/>CY_RSLT_MODULE_MIDDLEWARE_BASE<sp/>+<sp/>20<sp/>//<sp/>TODO<sp/>align<sp/>base</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_RESULT_INIT_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="512"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="513"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_RSLT_MODULE_RADAR_SENSING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="514"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MTB_RADAR_SENSING_INIT_ERROR))<sp/></highlight></codeline>
+<codeline lineno="515"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_RESULT_MEM_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="516"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="517"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_RSLT_MODULE_RADAR_SENSING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="518"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MTB_RADAR_SENSING_MEM_ERROR))<sp/></highlight></codeline>
+<codeline lineno="519"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_RESULT_PROCESS_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="520"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="521"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_RSLT_MODULE_RADAR_SENSING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="522"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MTB_RADAR_SENSING_PROCESS_ERROR))<sp/></highlight></codeline>
+<codeline lineno="523"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_RESULT_CONFIGURATION_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="524"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="525"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_RSLT_MODULE_RADAR_SENSING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="526"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MTB_RADAR_SENSING_CONFIGURATION_ERROR))<sp/></highlight></codeline>
+<codeline lineno="527"><highlight class="preprocessor">#define<sp/>MTB_RADAR_SENSING_RESULT_BAD_PARAM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="528"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>CY_RSLT_CREATE(CY_RSLT_TYPE_FATAL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="529"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CY_RSLT_MODULE_RADAR_SENSING,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="530"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(MTB_RADAR_SENSING_BAD_PARAM))<sp/></highlight></codeline>
+<codeline lineno="532"><highlight class="preprocessor"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"></highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="538"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint64_t<sp/><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref>;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="group__group__mtb__radar__sensing__structures_1ga3c630c4379dae615b885a4ff82813010" kindref="member">mtb_radar_sensing_timeinterval_t</ref>;</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"></highlight></codeline>
+<codeline lineno="553"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a478914ef0b0e7e42c114198537344237" kindref="member">MTB_RADAR_SENSING_EVENT_PRESENCE_IN</ref><sp/>=<sp/>300,<sp/></highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793affa8349aa5c38952e9a7a24888c0144d" kindref="member">MTB_RADAR_SENSING_EVENT_PRESENCE_OUT</ref><sp/>=<sp/>301,<sp/></highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793a6ee25c109aa9db26e77fb771f470044f" kindref="member">MTB_RADAR_SENSING_EVENT_COUNTER_IN</ref><sp/>=<sp/>310,<sp/><sp/></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ac267bfa78203ba1e9a3f1bf847a0588f" kindref="member">MTB_RADAR_SENSING_EVENT_COUNTER_OUT</ref><sp/>=<sp/>311,<sp/></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae1b2f192f0c68e8e7d8e2a5ce7bb4ba7" kindref="member">MTB_RADAR_SENSING_EVENT_COUNTER_OCCUPIED</ref><sp/>=<sp/>312,<sp/></highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga5ba642740bd880dad39d8e9da2610793ae53d7986140f07944c986b62bd90c111" kindref="member">MTB_RADAR_SENSING_EVENT_COUNTER_FREE</ref><sp/>=<sp/>313,<sp/></highlight></codeline>
+<codeline lineno="561"><highlight class="normal">}<sp/><ref refid="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" kindref="member">mtb_radar_sensing_event_t</ref>;</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa0f3b68c38b6dcf3197492f876b8994e6" kindref="member">MTB_RADAR_SENSING_MASK_NONE</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7facdeca8a2712f56b56673d294c809e0a1" kindref="member">MTB_RADAR_SENSING_MASK_PRESENCE_EVENTS</ref><sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>8),<sp/></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gga4d524c7a2479e9377cecfb99467d2d7fa479f9b8eb4e8fcc1447ede4f4813c859" kindref="member">MTB_RADAR_SENSING_MASK_COUNTER_EVENTS</ref><sp/>=<sp/>(2<sp/>&lt;&lt;<sp/>8)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="572"><highlight class="normal">}<sp/><ref refid="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" kindref="member">mtb_radar_sensing_mask_t</ref>;</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="580" refid="structmtb__radar__sensing__event__info__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref><sp/>timestamp;<sp/></highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*description;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="584"><highlight class="normal">}<sp/><ref refid="structmtb__radar__sensing__event__info__t" kindref="compound">mtb_radar_sensing_event_info_t</ref>;</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="590" refid="structmtb__radar__sensing__presence__event__info__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="591"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref><sp/>timestamp;<sp/></highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*description;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>distance;<sp/></highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>accuracy;<sp/></highlight></codeline>
+<codeline lineno="596"><highlight class="normal">}<sp/><ref refid="structmtb__radar__sensing__presence__event__info__t" kindref="compound">mtb_radar_sensing_presence_event_info_t</ref>;</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"></highlight></codeline>
+<codeline lineno="602" refid="structmtb__radar__sensing__counter__event__info__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="603"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref><sp/>timestamp;<sp/></highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*description;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in_count;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>out_count;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="608"><highlight class="normal">}<sp/><ref refid="structmtb__radar__sensing__counter__event__info__t" kindref="compound">mtb_radar_sensing_counter_event_info_t</ref>;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614" refid="structmtb__radar__sensing__hw__cfg__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="615"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>spi_cs;<sp/></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>reset;<sp/><sp/></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>ldo_en;<sp/></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_gpio_t<sp/>irq;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/>cyhal_spi_t<sp/>*spi;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="621"><highlight class="normal">}<sp/><ref refid="structmtb__radar__sensing__hw__cfg__t" kindref="compound">mtb_radar_sensing_hw_cfg_t</ref>;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628" refid="structmtb__radar__sensing__context__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="629"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">internal</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="631"><highlight class="normal">}<sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref>;</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="635"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="639"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"></highlight></codeline>
+<codeline lineno="649"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga0c0884ad690b8bb8b04b12b98bf36644" kindref="member">mtb_radar_sensing_init</ref>(<ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__hw__cfg__t" kindref="compound">mtb_radar_sensing_hw_cfg_t</ref><sp/>*hw_cfg,</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1ga4d524c7a2479e9377cecfb99467d2d7f" kindref="member">mtb_radar_sensing_mask_t</ref><sp/>event_mask);</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"></highlight></codeline>
+<codeline lineno="653"><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga881766eab1b5f3fe13d070ca05896eee" kindref="member">mtb_radar_sensing_platform_set_malloc_free</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>(*malloc_func)(<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>),</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*free_func)(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga2a7d61bf5d0380be2a6937033e118045" kindref="member">mtb_radar_sensing_set_parameter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value);</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga1dfcc048a572de614d64169eec620e4d" kindref="member">mtb_radar_sensing_get_parameter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"></highlight></codeline>
+<codeline lineno="722"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga76e796a7ad2a447185b35b83ec7137e2" kindref="member">mtb_radar_sensing_process</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,<sp/><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref><sp/>timestamp);</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"></highlight></codeline>
+<codeline lineno="729"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga12b35625c1e6efe75816f67e2b479434" kindref="member">mtb_radar_sensing_enable</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"></highlight></codeline>
+<codeline lineno="736"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga07c962fe364bb14c7cd48adf7c8a484d" kindref="member">mtb_radar_sensing_disable</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"></highlight></codeline>
+<codeline lineno="743"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__high__level_1ga5793a52142f8f6e92ebc21b319fb77eb" kindref="member">mtb_radar_sensing_free</ref>(<ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"></highlight></codeline>
+<codeline lineno="745"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="747"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="748"><highlight class="normal"></highlight></codeline>
+<codeline lineno="749"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="751"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="752"><highlight class="normal"></highlight></codeline>
+<codeline lineno="760"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" kindref="member">mtb_radar_sensing_callback_t</ref>)(<ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__structures_1ga5ba642740bd880dad39d8e9da2610793" kindref="member">mtb_radar_sensing_event_t</ref><sp/>event,</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtb__radar__sensing__event__info__t" kindref="compound">mtb_radar_sensing_event_info_t</ref><sp/>*event_info,</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"></highlight></codeline>
+<codeline lineno="774"><highlight class="normal">cy_rslt_t<sp/><ref refid="group__group__mtb__radar__sensing__callbacks_1ga972c87798ddc18542625e8c6052ea580" kindref="member">mtb_radar_sensing_register_callback</ref>(<ref refid="structmtb__radar__sensing__context__t" kindref="compound">mtb_radar_sensing_context_t</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__group__mtb__radar__sensing__callbacks_1ga60a125019df36616a00d86da3c68094b" kindref="member">mtb_radar_sensing_callback_t</ref><sp/>callback,</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"></highlight></codeline>
+<codeline lineno="778"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="780"><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="781"><highlight class="normal"></highlight></codeline>
+<codeline lineno="782"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="783"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="mtb_radar_sensing.h"/>
+  </compounddef>
+</doxygen>

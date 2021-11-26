@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="structmtb__radar__sensing__counter__event__info__t" kind="struct" language="C++" prot="public">
+    <compoundname>mtb_radar_sensing_counter_event_info_t</compoundname>
+    <includes local="no">mtb_radar_sensing.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtb__radar__sensing__counter__event__info__t_1ab92751ce579a30be09f99fe6e5e4bc23" prot="public" static="no" mutable="no">
+        <type><ref refid="group__group__mtb__radar__sensing__structures_1gade89becc61733734ed51c9cb78feee64" kindref="member">mtb_radar_sensing_timestamp_t</ref></type>
+        <definition>mtb_radar_sensing_timestamp_t mtb_radar_sensing_counter_event_info_t::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+<para>Timestamp of event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="604" column="35" bodyfile="mtb_radar_sensing.h" bodystart="604" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__counter__event__info__t_1acd5f5e9d6aed9ec9f85c26021f49bc7b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* mtb_radar_sensing_counter_event_info_t::description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+<para>Description about the event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="605" column="16" bodyfile="mtb_radar_sensing.h" bodystart="605" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__counter__event__info__t_1a6df7467ca375303070cd7dab1030d701" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtb_radar_sensing_counter_event_info_t::in_count</definition>
+        <argsstring></argsstring>
+        <name>in_count</name>
+        <briefdescription>
+<para>Current in count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="606" column="9" bodyfile="mtb_radar_sensing.h" bodystart="606" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__counter__event__info__t_1af54c45f3ba9f116d0185fd0a2002bca8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtb_radar_sensing_counter_event_info_t::out_count</definition>
+        <argsstring></argsstring>
+        <name>out_count</name>
+        <briefdescription>
+<para>Current out count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="607" column="9" bodyfile="mtb_radar_sensing.h" bodystart="607" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to hold information of entrance counter events. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mtb_radar_sensing.h" line="602" column="1" bodyfile="mtb_radar_sensing.h" bodystart="603" bodyend="608"/>
+    <listofallmembers>
+      <member refid="structmtb__radar__sensing__counter__event__info__t_1acd5f5e9d6aed9ec9f85c26021f49bc7b" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_counter_event_info_t</scope><name>description</name></member>
+      <member refid="structmtb__radar__sensing__counter__event__info__t_1a6df7467ca375303070cd7dab1030d701" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_counter_event_info_t</scope><name>in_count</name></member>
+      <member refid="structmtb__radar__sensing__counter__event__info__t_1af54c45f3ba9f116d0185fd0a2002bca8" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_counter_event_info_t</scope><name>out_count</name></member>
+      <member refid="structmtb__radar__sensing__counter__event__info__t_1ab92751ce579a30be09f99fe6e5e4bc23" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_counter_event_info_t</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.20" xml:lang="en-US">
+  <compounddef id="structmtb__radar__sensing__hw__cfg__t" kind="struct" language="C++" prot="public">
+    <compoundname>mtb_radar_sensing_hw_cfg_t</compoundname>
+    <includes local="no">mtb_radar_sensing.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtb__radar__sensing__hw__cfg__t_1a67710e7fe228e34610e02a504b6aa548" prot="public" static="no" mutable="no">
+        <type>cyhal_gpio_t</type>
+        <definition>cyhal_gpio_t mtb_radar_sensing_hw_cfg_t::spi_cs</definition>
+        <argsstring></argsstring>
+        <name>spi_cs</name>
+        <briefdescription>
+<para>spi_cs </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="616" column="18" bodyfile="mtb_radar_sensing.h" bodystart="616" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__hw__cfg__t_1ad05992351475d0318e635cf67272215f" prot="public" static="no" mutable="no">
+        <type>cyhal_gpio_t</type>
+        <definition>cyhal_gpio_t mtb_radar_sensing_hw_cfg_t::reset</definition>
+        <argsstring></argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>reset </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="617" column="18" bodyfile="mtb_radar_sensing.h" bodystart="617" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__hw__cfg__t_1a861d2fa1be285fe79c11c01a9f003697" prot="public" static="no" mutable="no">
+        <type>cyhal_gpio_t</type>
+        <definition>cyhal_gpio_t mtb_radar_sensing_hw_cfg_t::ldo_en</definition>
+        <argsstring></argsstring>
+        <name>ldo_en</name>
+        <briefdescription>
+<para>ldo_en </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="618" column="18" bodyfile="mtb_radar_sensing.h" bodystart="618" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__hw__cfg__t_1ac287301a6e2ad2481566b33a7e99ef25" prot="public" static="no" mutable="no">
+        <type>cyhal_gpio_t</type>
+        <definition>cyhal_gpio_t mtb_radar_sensing_hw_cfg_t::irq</definition>
+        <argsstring></argsstring>
+        <name>irq</name>
+        <briefdescription>
+<para>irq </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="619" column="18" bodyfile="mtb_radar_sensing.h" bodystart="619" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtb__radar__sensing__hw__cfg__t_1a44acc2b6858c9a5806206d2561455ad5" prot="public" static="no" mutable="no">
+        <type>cyhal_spi_t *</type>
+        <definition>cyhal_spi_t* mtb_radar_sensing_hw_cfg_t::spi</definition>
+        <argsstring></argsstring>
+        <name>spi</name>
+        <briefdescription>
+<para>spi </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mtb_radar_sensing.h" line="620" column="17" bodyfile="mtb_radar_sensing.h" bodystart="620" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure to hold hw resources. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mtb_radar_sensing.h" line="614" column="1" bodyfile="mtb_radar_sensing.h" bodystart="615" bodyend="621"/>
+    <listofallmembers>
+      <member refid="structmtb__radar__sensing__hw__cfg__t_1ac287301a6e2ad2481566b33a7e99ef25" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_hw_cfg_t</scope><name>irq</name></member>
+      <member refid="structmtb__radar__sensing__hw__cfg__t_1a861d2fa1be285fe79c11c01a9f003697" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_hw_cfg_t</scope><name>ldo_en</name></member>
+      <member refid="structmtb__radar__sensing__hw__cfg__t_1ad05992351475d0318e635cf67272215f" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_hw_cfg_t</scope><name>reset</name></member>
+      <member refid="structmtb__radar__sensing__hw__cfg__t_1a44acc2b6858c9a5806206d2561455ad5" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_hw_cfg_t</scope><name>spi</name></member>
+      <member refid="structmtb__radar__sensing__hw__cfg__t_1a67710e7fe228e34610e02a504b6aa548" prot="public" virt="non-virtual"><scope>mtb_radar_sensing_hw_cfg_t</scope><name>spi_cs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
