@@ -1204,9 +1204,9 @@ Supported keys and values for presence detection: <table rows="3" cols="4"><row>
 <codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__group__mtb__radar__sensing__macros_1ga64a9ee2b9fd4adb84817a4912b265717" kindref="member">MTB_RADAR_SENSING_RESULT_BAD_PARAM</ref>;</highlight></codeline>
 <codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="585"><highlight class="normal"></highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/>ifx_free(radar_sensing-&gt;frame_buffer_ff.data);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/>Ifx_RadarFMCW_Destroy(&amp;radar_sensing-&gt;ifx_radar_fmcw_context);</highlight></codeline>
 <codeline lineno="587"><highlight class="normal"></highlight></codeline>
-<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>Ifx_RadarFMCW_Destroy(&amp;radar_sensing-&gt;ifx_radar_fmcw_context);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>ifx_free(radar_sensing-&gt;frame_buffer_ff.data);</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"></highlight></codeline>
 <codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ifx_radar_free(&amp;(radar_sensing-&gt;radar_instance))<sp/>!=<sp/>IFX_STATUS_OK)</highlight></codeline>
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
